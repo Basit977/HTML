@@ -1,0 +1,67 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Percentage Calculator</h1>
+<form onsubmit="Percalcu();return false;">
+<label for="Tm">Total Marks</label>
+<input type="number" name="TM" id="std_TM"><br><br>
+<label for="OB">Obtain Marks</label>
+<input type="number" name="OB" id="std_OM"><br><br>
+<button type="submit">Calculate</button>
+
+</form>
+<h3 id="my"></h3>
+<h3 id="grade"></h3>
+<script>
+function Percalcu(){
+let TotalMarks=document.querySelector("#std_TM").value;
+let ObtainMarks=document.querySelector("#std_OM").value;
+let res=ObtainMarks/TotalMarks*100;
+let fix=res.toFixed(1) 
+
+if(fix<=100 && fix>=80)
+{
+  document.querySelector("#my").innerHTML=("Your Calculated Percentage is "+fix);
+  document.querySelector("#grade").innerHTML=("Your Grade is A+");
+}
+else if(fix<=79.9 && fix>=60)
+{
+  document.querySelector("#my").innerHTML=("Your Calculated Percentage is "+fix);
+  document.querySelector("#grade").innerHTML=("Your Grade is B+");
+}
+else if(fix<=59.9 && fix>=40) 
+ {
+  document.querySelector("#my" ).innerHTML=("Your Calculated Percentage is "+fix);
+  document.querySelector("#grade").innerHTML=("Your Grade is C+"); 
+ }
+else if(fix<=39.9 && fix>=34)
+
+{document.querySelector("#my" ).innerHTML=("Your Calculated Percentage is "+fix);
+  document.querySelector("#grade").innerHTML=("Your Grade is D+");  
+}
+
+  else
+   {document.querySelector("#my").innerHTML=("Fail");
+  document.querySelector("#grade").innerHTML=("Your Grade is F");
+
+  }
+
+
+
+ 
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>
